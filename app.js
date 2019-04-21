@@ -1,4 +1,5 @@
 import { dataTime } from './src/data'
+import { delay } from 'rxjs/operators'
 
 const obs = {
   next: (data) => {
@@ -12,4 +13,7 @@ const obs = {
   }
 }
 
-dataTime().subscribe(obs)
+// dataTime().subscribe(obs)
+
+// delay de 5s para começar.
+dataTime().pipe(delay(5e3)).subscribe(obs)
